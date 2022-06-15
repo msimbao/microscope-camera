@@ -174,3 +174,32 @@ textarea:focus {
 select:focus {
 	color: #000;
 }
+
+#preview{
+	position: absolute;
+	top: 60vh;
+	left: 80%;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: crimson;
+	border: 1px solid #212121;
+	text-transform: uppercase;
+	transform: translate(-50%, 0);
+	font-family: monospace;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #fff;
+}
+#preview:focus,
+#preview:hover{
+	background-color: crimson;
+}
+.image {
+	position: absolute;
+	top: 5vh;
+	left: 15vw;
+	height: 50vh;
+	width: 70vw;
+	overflow: hidden;
+}
