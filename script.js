@@ -10,7 +10,7 @@ let opacity = 100;
 let sepia = 0;
 let dropshadow = 0;
  
-const imgture = document.getElementById("img");
+const imgture = document.getElementById("video");
 const resetAll = document.getElementById("resetAll");
  
 const slider1 = document.getElementById("slider1");
@@ -226,3 +226,41 @@ slider9.addEventListener("focus", function() {
 slider9.addEventListener("blur", function() {
 	value9.style.visibility = "hidden";
 });
+
+
+//Adding Video Camera
+
+var video = document.querySelector("#video");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+
+
+function capture(){
+    var canvas = document.getElementById('canvas');
+    var video = document.getElementById('video');
+   video.preload = 'metadata';
+  canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth;
+    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+  
+    var ctx = canvas.getContext('2d');
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var filtered = ImageFilters.GrayScale(imageData);
+    ctx.putImageData(filtered, 0, 0);
+  
+  var link = document.createElement('a');
+link.href = document.getElementById('canvas').toDataURL();
+link.download = 'Download.jpg';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+  
+}
