@@ -1,16 +1,17 @@
-/** Code By Webdevtrick ( https://webdevtrick.com ) **/
+/** Part of Code By Webdevtrick ( https://webdevtrick.com ) **/
 body {
 	background: #fff;
-	overflow: hidden;
-	color: #313131;
- 
+	overflow: scroll;
+	color: #313131; 
 }
+
 .container{
 	position: absolute;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
 }
+
 #resetAll{
 	position: absolute;
 	top: 60vh;
@@ -19,7 +20,6 @@ body {
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: crimson;
-	border: 1px solid #212121;
 	text-transform: uppercase;
 	transform: translate(-50%, 0);
 	font-family: monospace;
@@ -27,10 +27,7 @@ body {
 	cursor: pointer;
 	color: #fff;
 }
-#resetAll:focus,
-#resetAll:hover{
-	background-color: crimson;
-}
+
 .image {
 	position: absolute;
 	top: 5vh;
@@ -62,14 +59,13 @@ video {
 .slider {
 	position: relative;
 	width: 100px;
-	top: ;
+	top: 50px;
 	transform-origin: 0 0;
 }
 label {
 	position: relative;
 	font-family: monospace;
 	text-transform: uppercase;
- 
 }
 .val {
 	position: relative;
@@ -97,15 +93,15 @@ input[type="range"]::-ms-track {
 	color: transparent;
 }
 input[type="range"]::-webkit-slider-runnable-track {
-	height: 2px;
+	height: 3px;
 	cursor: pointer;
 	background: crimson;
 	margin-top: 10px;
 }
 input[type="range"]::-webkit-slider-thumb {
-	height: 20px;
-	width: 20px;
-	border-radius: 10px;
+	height: 15px;
+	width: 15px;
+	border-radius: 3px;
 	background: #212121;
 	cursor: pointer;
 	-webkit-appearance: none;
@@ -142,25 +138,8 @@ input[type="range"]::-ms-thumb {
 	-webkit-appearance: none;
 	margin-top: 0px;
 }
-button,
-p{
-	display: inline-block;
-	border: none;
-	margin: 0;
-	text-decoration: none;
-	padding: 0;
-	background: none;
-	border-radius: 0;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	overflow: hidden;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
-}
-button:focus {
-	outline: none;
-	color: black;
-}
+
+
 textarea:focus {
 	outline: none;
 }
@@ -176,7 +155,6 @@ select:focus {
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: crimson;
-	border: 1px solid #212121;
 	text-transform: uppercase;
 	transform: translate(-50%, 0);
 	font-family: monospace;
@@ -184,10 +162,7 @@ select:focus {
 	cursor: pointer;
 	color: #fff;
 }
-#preview:focus,
-#preview:hover{
-	background-color: crimson;
-}
+
 .image {
 	position: absolute;
 	top: 5vh;
@@ -215,4 +190,31 @@ select:focus {
 #histogram.thumb {
   max-width: 300px;
   max-height: 200px;
+}
+
+
+button {
+    padding: 7px 36px;
+    color: #fff;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 16px !important;
+    cursor: pointer;
+    position: relative;
+    background: hsl(200deg 85% 25%) !important;
+    border: 2px solid transparent;
+    box-shadow: 0px 4px 8px hsl(200deg 30% 70%);
+    line-height: initial !important;
+    min-width: 82px;
+    text-transform: none;
+    height: initial;
+    font-weight: 400;
+    letter-spacing: initial;
+    text-shadow: none;
+    transition: all 0.2s;
+}
+
+button:hover {
+  background:#ffffff;
+  color: hsl(200deg 85% 25%)
 }
