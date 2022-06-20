@@ -10,8 +10,8 @@ let opacity = 100;
 let sepia = 0;
 let dropshadow = 0;
 
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
 const imgture = document.getElementById("video");
 const resetAll = document.getElementById("resetAll");
@@ -60,7 +60,7 @@ function updateFilters() {
 }
 //Reset All
 resetAll.addEventListener("click", function () {
-  console.log("resset");
+  // console.log("resset");
   brightness = 100;
   slider1.value = 100;
   value1.innerHTML = slider1.value + "%";
@@ -93,7 +93,7 @@ resetAll.addEventListener("click", function () {
 
 //Brightness slider
 slider1.addEventListener("input", function () {
-  console.log(slider1.value);
+  // console.log(slider1.value);
   value1.innerHTML = slider1.value + "%";
   brightness = slider1.value;
   updateFilters();
@@ -250,23 +250,34 @@ function preview() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  canvas
-    .getContext("2d")
-    .drawImage(video, 0, 0, canvas.width, canvas.height);
-    ctx.filter = 'brightness(' + slider1.value + ')';
-
+  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+  canvas.getContext("2d").filter =
+    "brightness(" +
+    brightness +
+    "%) contrast(" +
+    contrast +
+    "%) saturate(" +
+    saturate +
+    "%) grayscale(" +
+    grayscale +
+    "%) invert(" +
+    invert +
+    "%) hue-rotate(" +
+    huerotate +
+    "deg) blur(" +
+    blur +
+    "px) opacity(" +
+    opacity +
+    "%) sepia(" +
+    sepia +
+    "%)";
 }
 
 function capture() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  console.log(canvas.width);
-  canvas
-    .getContext("2d")
-    .drawImage(video, 0, 0, canvas.width, canvas.height);
-    ctx.filter = 'brightness(' + slider1.value + ')';
-
+  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // var ctx = canvas.getContext('2d');
   // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
