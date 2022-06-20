@@ -1,4 +1,4 @@
-//Code By Webdevtrick ( https://webdevtrick.com )
+//Upper Slider Code By Webdevtrick ( https://webdevtrick.com )
 let brightness = 100;
 let contrast = 100;
 let saturate = 100;
@@ -9,6 +9,9 @@ let blur = 0;
 let opacity = 100;
 let sepia = 0;
 let dropshadow = 0;
+
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
 const imgture = document.getElementById("video");
 const resetAll = document.getElementById("resetAll");
@@ -97,12 +100,12 @@ slider1.addEventListener("input", function () {
 });
 
 slider1.addEventListener("focus", function () {
-  console.log("focus gotten");
+  // console.log("focus gotten");
   value1.style.visibility = "visible";
 });
 
 slider1.addEventListener("blur", function () {
-  console.log("focus lost");
+  // console.log("focus lost");
   value1.style.visibility = "hidden";
 });
 
@@ -247,27 +250,23 @@ function preview() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  // canvas.height = video.videoHeight;
-  // canvas.width = video.videoWidth;
-  console.log(video.videoWidth);
-  console.log(video.videoHeight);
-  console.log(canvas.width);
-  console.log(canvas.height);
   canvas
     .getContext("2d")
     .drawImage(video, 0, 0, canvas.width, canvas.height);
+    ctx.filter = 'brightness(' + slider1.value + ')';
+
 }
 
 function capture() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  // canvas.height = video.videoHeight;
-  // canvas.width = video.videoWidth;
   console.log(canvas.width);
   canvas
     .getContext("2d")
     .drawImage(video, 0, 0, canvas.width, canvas.height);
+    ctx.filter = 'brightness(' + slider1.value + ')';
+
 
   // var ctx = canvas.getContext('2d');
   // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
