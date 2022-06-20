@@ -247,13 +247,13 @@ button:hover {
 video {
 	top: 0%;
 	left: 0%;
-	width: 100%;
+	width: 1024px;
 	height: 100%;
 }
 
 canvas{
-  	top: 0%;
+  top: 0%;
 	left: 0%;
-	width: 100%;
+	width: 1024px;
 	height: 100%;
 }

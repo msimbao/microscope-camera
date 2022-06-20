@@ -247,27 +247,27 @@ function preview() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  canvas.height = video.videoHeight;
-  canvas.width = video.videoWidth;
-  console.log(video.width);
-  console.log(video.height);
+  // canvas.height = video.videoHeight;
+  // canvas.width = video.videoWidth;
+  console.log(video.videoWidth);
+  console.log(video.videoHeight);
   console.log(canvas.width);
   console.log(canvas.height);
   canvas
     .getContext("2d")
-    .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    .drawImage(video, 0, 0, canvas.width, canvas.height);
 }
 
 function capture() {
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  canvas.height = video.videoHeight;
-  canvas.width = video.videoWidth;
+  // canvas.height = video.videoHeight;
+  // canvas.width = video.videoWidth;
   console.log(canvas.width);
   canvas
     .getContext("2d")
-    .drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    .drawImage(video, 0, 0, canvas.width, canvas.height);
 
   // var ctx = canvas.getContext('2d');
   // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
