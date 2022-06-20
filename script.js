@@ -242,6 +242,24 @@ if (navigator.mediaDevices.getUserMedia) {
     });
 }
 
+//Preview
+
+
+function preview(){
+    var canvas = document.getElementById('canvas');
+    var video = document.getElementById('video');
+   video.preload = 'metadata';
+  canvas.height = video.videoHeight;
+    canvas.width = video.videoWidth;
+    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+  
+    var ctx = canvas.getContext('2d');
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var filtered = ImageFilters.GrayScale(imageData);
+    ctx.putImageData(filtered, 0, 0);
+  
+}
+
 
 function capture(){
     var canvas = document.getElementById('canvas');

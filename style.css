@@ -21,7 +21,7 @@ body {
   padding:5px;
 }
 .singleSlider {
-	width: 10vw;
+	width: 10px;
 	padding: 0;
 }
 .slider {
@@ -114,7 +114,7 @@ select:focus {
 	color: #000;
 }
 
-#preview{
+/* #preview{
 	position: absolute;
 	top: 60vh;
 	left: -80%;
@@ -128,7 +128,7 @@ select:focus {
 	font-size: 1.5rem;
 	cursor: pointer;
 	color: #fff;
-}
+} */
 
 
 /*Color Histogram*/
@@ -231,7 +231,7 @@ button:hover {
   width:100%;
   height:90%;
   padding: 3px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-top: none;
 }
 
@@ -246,8 +246,15 @@ button:hover {
 
 video {
 	top: 0%;
-	left: 50%;
-	transform: translate(-50%, -0%);
-	width: 90%;
+	left: 0%;
+	width: 100%;
 	height: 100%;
+}
+
+canvas{
+  	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+  border:2px solid black;
 }
