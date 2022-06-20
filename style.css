@@ -186,7 +186,7 @@ select:focus {
 }
 
 
-button {
+/* button {
     padding: 7px 36px;
     color: #fff;
     border-radius: 25px;
@@ -210,7 +210,7 @@ button {
 button:hover {
   background:#ffffff;
   color: hsl(200deg 85% 25%)
-}
+} */
 
 /*Tabs*/
 
