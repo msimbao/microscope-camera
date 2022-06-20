@@ -12,50 +12,16 @@ body {
 	overflow: hidden;
 }
 
-#resetAll{
-	position: absolute;
-	top: 60vh;
-	left: 50%;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: crimson;
-	text-transform: uppercase;
-	transform: translate(-50%, 0);
-	font-family: monospace;
-	font-size: 1.5rem;
-	cursor: pointer;
-	color: #fff;
-}
-
-.image {
-	position: absolute;
-	height: 100%;
-	width: 90%;
-  right:2vw;
-  top:50px;
-	overflow: hidden;
-}
-
-video {
-	position: absolute;
-	top: 0%;
-	left: 50%;
-	transform: translate(-50%, -0%);
-	width: 90%;
-	height: 90%;
-}
 .sliders {
 	position: absolute;
 	float: none;
-	left: 2vw;
+	left: 0vw;
 	width: 10%;
   height:100%;
-  border:2px solid black;
   padding:5px;
 }
 .singleSlider {
-	width: 8vw;
+	width: 10vw;
 	padding: 0;
 }
 .slider {
@@ -151,7 +117,7 @@ select:focus {
 #preview{
 	position: absolute;
 	top: 60vh;
-	left: 80%;
+	left: -80%;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -212,6 +178,22 @@ button:hover {
   color: hsl(200deg 85% 25%)
 } */
 
+#resetAll{
+	position: absolute;
+	top: 60vh;
+	left: -50%;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: crimson;
+	text-transform: uppercase;
+	transform: translate(-50%, 0);
+	font-family: monospace;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: #fff;
+}
+
 /*Tabs*/
 
 /* Style the tab */
@@ -246,7 +228,26 @@ button:hover {
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  width:100%;
+  height:90%;
+  padding: 3px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.image {
+	position: absolute;
+	height: 100%;
+	width: 85%;
+  right:20px;
+  top:10px;
+	overflow: hidden;
+}
+
+video {
+	top: 0%;
+	left: 50%;
+	transform: translate(-50%, -0%);
+	width: 90%;
+	height: 100%;
 }

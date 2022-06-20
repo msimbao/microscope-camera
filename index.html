@@ -19,23 +19,20 @@
   
 <div class="image">
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">Live Preview</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Final Preview</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Capture</button>
+  <button class="tablinks" onclick="openTab(event, 'live')">Live Preview</button>
+  <button class="tablinks" onclick="openTab(event, 'preview')">Final Preview</button>
+  <button class="tablinks" onclick="openTab(event, 'capture')">Capture</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
+<div id="live" class="tabcontent">
 	<video autoplay="true" id="video"></video>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
+<div id="preview" class="tabcontent">
+<a><canvas id="canvas"></canvas></a>
+  </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
+<div id="capture" class="tabcontent">
   <p>Tokyo is the capital of Japan.</p>
 </div>
 <!-- 	<img id="img" src="https://cdn.glitch.global/e2c99dad-906b-4e47-92c1-d16bef671625/YE220301-F1.jpg?v=1655232134359" alt=""> -->
@@ -93,7 +90,7 @@
 <button id="resetAll">reset</button>
 <button id="preview" onclick="capture()">Capture</button> <br/><br/>
  <br/><br/>
-  <a><canvas id="canvas"></canvas></a>
+  
   <script  src="function.js"></script>
 
     
