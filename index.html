@@ -20,6 +20,7 @@
 <div class="image">
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'live')">Live Preview</button>
+    <button class="tablinks" onclick="openTab(event, 'histogram')">Histogram</button>
   <button class="tablinks" onclick="openTab(event, 'preview'); preview();">Final Preview</button>
   <button class="tablinks" onclick="capture();">Capture</button>
 </div>
@@ -27,6 +28,10 @@
 <div id="live" class="tabcontent">
 	<video autoplay="true" id="video"></video>
 </div>
+  
+  <div id="histogram" class="tabcontent">
+    
+  </div>  
 
 <div id="preview" class="tabcontent">
 <a><canvas id="canvas" width="1024" height="768"></canvas></a>
@@ -79,6 +84,7 @@
 		<input class="slider" id="slider9" type="range" min="0" max="100" value="0">
 		<label for="slider9">sepia</label>
 		</div>
+    
   <!-- Check Boxes-->
   <input type="checkbox" id="sharpen" name="sharpen" value="sharpen">
   <label for="vehicle1"> Sharpen</label><br> 
