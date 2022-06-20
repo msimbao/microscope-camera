@@ -259,18 +259,19 @@ function capture(){
     var canvas = document.getElementById('canvas');
     var video = document.getElementById('video');
    video.preload = 'metadata';
-  canvas.height = video.videoHeight;
-    canvas.width = video.videoWidth;
+    canvas.height = 3840;
+    canvas.width = 2160;
+  console.log(canvas.width);
     canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
   
-    var ctx = canvas.getContext('2d');
-    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    var filtered = ImageFilters.GrayScale(imageData);
-    ctx.putImageData(filtered, 0, 0);
+    // var ctx = canvas.getContext('2d');
+    // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    // var filtered = ImageFilters.GrayScale(imageData);
+    // ctx.putImageData(filtered, 0, 0);
   
   var link = document.createElement('a');
 link.href = document.getElementById('canvas').toDataURL();
-link.download = 'Download.jpg';
+link.download = 'Microscope Image.png';
 document.body.appendChild(link);
 link.click();
 document.body.removeChild(link);
