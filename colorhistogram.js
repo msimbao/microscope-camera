@@ -44,6 +44,7 @@ window.addEventListener('load', function () {
       imgData = null;
       img.crossOrigin = "Anonymous";
 
+
   var initHistogram = function () {
     // Plot defaults
     accuracy.value = 1;

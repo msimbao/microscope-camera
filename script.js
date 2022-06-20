@@ -276,6 +276,9 @@ function preview() {
   var filtered = ImageFilters.Gamma (filtered, 1)
   ctx.putImageData(filtered, 0, 0);
   
+  var img = document.getElementById('myImg');
+  img.src = canvas.getContext("2d").canvas.toDataURL('image/png');
+  
 }
 
 function capture() {
@@ -317,3 +320,4 @@ function openTab(evt, tabName) {
 
 event = document.onload;
 openTab(event, "live");
+preview()
