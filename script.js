@@ -271,6 +271,14 @@ function preview() {
     "%) sepia(" +
     sepia +
     "%)";
+  
+  var factor = 1;
+  var ctx = canvas.getContext('2d');
+  var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  var filtered = ImageFilters.Sharpen (imageData, factor)
+  var filtered = ImageFilters.Gamma (filtered, 1)
+  ctx.putImageData(filtered, 0, 0);
+  
 }
 
 function capture() {
@@ -283,6 +291,8 @@ function capture() {
   // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
   // var filtered = ImageFilters.GrayScale(imageData);
   // ctx.putImageData(filtered, 0, 0);
+  
+
 
   var link = document.createElement("a");
   link.href = document.getElementById("canvas").toDataURL();

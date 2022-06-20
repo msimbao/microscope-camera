@@ -3,6 +3,7 @@
   <head>
 
     <script src="/imagefilters.js"></script>
+    <script src="colorhistogram.js"></script>
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -79,8 +80,56 @@
 		<label for="slider9">sepia</label>
 		</div>
   <!-- Check Boxes-->
-  <input type="checkbox" id="sharpen" name="sharpen" value="Bike">
+  <input type="checkbox" id="sharpen" name="sharpen" value="sharpen">
   <label for="vehicle1"> Sharpen</label><br> 
+    
+    <h1>Canvas image histogram</h1>
+
+    <p><label>Image: <select id="imgSelector">
+        <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835">Pen Holder</option>
+        <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/key-holder.jpg?v=1655230843960">Hooks</option>
+        <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/plant.PNG?v=1655230845223">Planters</option>
+    </select></label></p>
+
+    <p><img 
+      class="thumb" id="myImg" src="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835" alt="Mushroom 
+      Kingdom"></p>
+
+    <p><canvas class="thumb" id="histogram" width="640" height="480">Your 
+    browser does not have support for Canvas.</canvas></p>
+
+    <p id="runtime">Plot runtime...</p>
+
+    <p><label>Histogram for: <select id="histType">
+        <option value="rgb">RGB</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="hue">Hue</option>
+        <option value="sat">Saturation</option>
+        <option value="val">Value (brightness)</option>
+        <option value="cmyk">CMYK</option>
+        <option value="cyan">Cyan</option>
+        <option value="magenta">Magenta</option>
+        <option value="yellow">Yellow</option>
+        <option value="kelvin">Kelvin (Black)</option>
+    </select></label></p>
+
+    <p><label>Count every <input id="accuracy" type="number" min="1" max="50" 
+      value="1"> pixels</label></p>
+
+    <p><label>Plot style: <select id="plotStyle">
+        <option value="continuous">Continuous</option>
+        <option value="discreet">Discreet</option>
+    </select></label></p>
+
+    <p><label>Plot fill <input id="plotFill" type="checkbox"></label></p>
+
+    <p><label>Plot colors: <select id="plotColors">
+        <option value="none">None</option>
+        <option value="flat">Flat colors</option>
+        <option value="gradient">Gradients</option>
+    </select></label></p>
 	</div>
 </div>
 <button id="resetAll">reset</button>

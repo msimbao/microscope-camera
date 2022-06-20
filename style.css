@@ -1,13 +1,13 @@
 /** Part of Code By Webdevtrick ( https://webdevtrick.com ) **/
 body {
 	background: #fff;
-  overflow:hidden;
+  overflow:scroll;
 	color: #313131; 
 }
 
 .container{
 	position: absolute;
-  overflow:hidden;
+  overflow:scroll;
 	height: 100%;
 	width: 100%;
 }
