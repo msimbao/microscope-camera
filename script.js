@@ -10,9 +10,6 @@ let opacity = 100;
 let sepia = 0;
 let dropshadow = 0;
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
 const imgture = document.getElementById("video");
 const resetAll = document.getElementById("resetAll");
 
