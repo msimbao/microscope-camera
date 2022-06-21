@@ -309,15 +309,27 @@ function updateCanvas(){
 //====================================================================================//
 
 
+function previewhistogram() {
+
+  updateCanvas();
+  
+  var img = document.getElementById('myImg');
+  img.src = canvas.getContext("2d").canvas.toDataURL('image/png');
+}
+
+
 function preview() {
+
+  updateCanvas();
+  
     var canvas = document.getElementById('canvas');
     var logo = new Image();
     logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
-    logo.width = 180;
-    logo.height = 50;
-    canvas.getContext('2d').drawImage(logo, canvas.width/2 - logo.width/2, canvas.height/2 + logo.height/3, 180 ,50);
+    logo.crossOrigin = "Anonymous";
+    logo.width = 617/2;
+    logo.height = 112/2;
+    canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2);
 
-  updateCanvas();
   var img = document.getElementById('myImg');
   img.src = canvas.getContext("2d").canvas.toDataURL('image/png');
 }
@@ -339,9 +351,10 @@ function logoCapture() {
     var canvas = document.getElementById('canvas');
     var logo = new Image();
     logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
-    logo.width = 180;
-    logo.height = 50;
-    canvas.getContext('2d').drawImage(logo, canvas.width/2 - logo.width/2, canvas.height/2 + logo.height/3, 180 ,50);
+    logo.crossOrigin = "Anonymous";
+    logo.width = 617/2;
+    logo.height = 112/2;
+    canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2);
 
   var link = document.createElement("a");
   link.href = document.getElementById("canvas").toDataURL();
