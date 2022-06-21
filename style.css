@@ -139,15 +139,19 @@ select:focus {
 
 
 #resetAll{
+	position: absolute;
+	top: 60vh;
+	left: -50%;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
+	background-color: crimson;
 	text-transform: uppercase;
+	transform: translate(-50%, 0);
 	font-family: monospace;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	cursor: pointer;
-	color: #333;
-  border:none;
+	color: #fff;
 }
 
 /*Tabs*/
