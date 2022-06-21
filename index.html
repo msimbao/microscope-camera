@@ -1,146 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
     <script src="/imagefilters.js"></script>
     <script src="colorhistogram.js"></script>
 
     <!-- Import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
 
     <!-- Import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
   <body>
-  
-<div class="container">
-  
-  
-<div class="image">
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'live')">Live Preview</button>
-    <button class="tablinks" onclick="openTab(event, 'colorhistogram')">Histogram</button>
-  <button class="tablinks" onclick="openTab(event, 'preview'); preview();">Final Preview</button>
-  <button class="tablinks" onclick="capture();">Capture</button>
-</div>
+    <div class="container">
+      <div class="image">
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'live')">
+            Live Preview
+          </button>
+          <button class="tablinks" onclick="openTab(event, 'colorhistogram')">
+            Histogram
+          </button>
+          <button
+            class="tablinks"
+            onclick="openTab(event, 'preview'); preview();"
+          >
+            Final Preview
+          </button>
+          <button class="tablinks" onclick="capture();">Capture</button>
+        </div>
 
-<div id="live" class="tabcontent">
-	<video autoplay="true" id="video"></video>
-</div>
-  
-  <div id="colorhistogram" class="tabcontent">
-     <p><label>Image: <select id="imgSelector">
+        <div id="live" class="tabcontent">
+          <video autoplay="true" id="video"></video>
+        </div>
+
+        <div id="colorhistogram" class="tabcontent">
+          <!-- Image Selector Code for Testing Canvas Histogram -->
+          <!--      <p><label>Image: <select id="imgSelector">
         <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835">Pen Holder</option>
         <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/key-holder.jpg?v=1655230843960">Hooks</option>
         <option value="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/plant.PNG?v=1655230845223">Planters</option>
-    </select></label></p>
+    </select></label></p> -->
 
-    <p><img 
-      class="thumb" id="myImg" src="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835" alt="Mushroom 
-      Kingdom"></p>
+          <p>
+            <img
+              class="thumb"
+              id="myImg"
+              src="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835"
+              alt="Mushroom 
+      Kingdom"
+            />
+          </p>
 
-    <p><canvas class="thumb" id="histogram" width="640" height="480">Your 
-    browser does not have support for Canvas.</canvas></p>
+          <p>
+            <canvas class="thumb" id="histogram" width="640" height="480"
+              >Your browser does not have support for Canvas.</canvas
+            >
+          </p>
 
-    <p id="runtime">Plot runtime...</p>
+          <p id="runtime">Plot runtime...</p>
 
-    <p><label>Histogram for: <select id="histType">
-        <option value="rgb">RGB</option>
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="hue">Hue</option>
-        <option value="sat">Saturation</option>
-        <option value="val">Value (brightness)</option>
-        <option value="cmyk">CMYK</option>
-        <option value="cyan">Cyan</option>
-        <option value="magenta">Magenta</option>
-        <option value="yellow">Yellow</option>
-        <option value="kelvin">Kelvin (Black)</option>
-    </select></label></p>
+          <p>
+            <label
+              >Histogram for:
+              <select id="histType">
+                <option value="rgb">RGB</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="hue">Hue</option>
+                <option value="sat">Saturation</option>
+                <option value="val">Value (brightness)</option>
+                <option value="cmyk">CMYK</option>
+                <option value="cyan">Cyan</option>
+                <option value="magenta">Magenta</option>
+                <option value="yellow">Yellow</option>
+                <option value="kelvin">Kelvin (Black)</option>
+              </select></label
+            >
+          </p>
 
-    <p><label>Count every <input id="accuracy" type="number" min="1" max="50" 
-      value="1"> pixels</label></p>
+          <p>
+            <label
+              >Count every
+              <input id="accuracy" type="number" min="1" max="50" value="1" />
+              pixels</label
+            >
+          </p>
 
-    <p><label>Plot style: <select id="plotStyle">
-        <option value="continuous">Continuous</option>
-        <option value="discreet">Discreet</option>
-    </select></label></p>
+          <p>
+            <label
+              >Plot style:
+              <select id="plotStyle">
+                <option value="continuous">Continuous</option>
+                <option value="discreet">Discreet</option>
+              </select></label
+            >
+          </p>
 
-    <p><label>Plot fill <input id="plotFill" type="checkbox"></label></p>
+          <p>
+            <label>Plot fill <input id="plotFill" type="checkbox" /></label>
+          </p>
 
-    <p><label>Plot colors: <select id="plotColors">
-        <option value="none">None</option>
-        <option value="flat">Flat colors</option>
-        <option value="gradient">Gradients</option>
-    </select></label></p>
-	</div>
-</div>
-<button id="resetAll">reset</button>
- <br/><br/>
-  
-  <script  src="function.js"></script>
-  </div>  
+          <p>
+            <label
+              >Plot colors:
+              <select id="plotColors">
+                <option value="none">None</option>
+                <option value="flat">Flat colors</option>
+                <option value="gradient">Gradients</option>
+              </select></label
+            >
+          </p>
+        </div>
 
-<div id="preview" class="tabcontent">
-<a><canvas id="canvas" width="1024" height="768"></canvas></a>
-  </div>    
-  </div>
- 
-	<div class="sliders">
-		<div class="singleSlider">
-		<div class="val" id="bright">100%</div>
-		<input class="slider" id="slider1" type="range" min="0" max="500" value="100">
-		<label for="slider1">brightness</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="contrast">100%</div>
-		<input class="slider" id="slider2" type="range" min="0" max="500" value="100">
-		<label for="slider2">contrast</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="saturate">100%</div>
-		<input class="slider" id="slider3" type="range" min="0" max="500" value="100">
-		<label for="slider3">saturate</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="gray">0%</div>
-		<input class="slider" id="slider4" type="range" min="0" max="100" value="0">
-		<label for="slider4">grayscale</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="invert">0%</div>
-		<input class="slider" id="slider5" type="range" min="0" max="100" value="0">
-		<label for="slider5">invert</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="hue">0°</div>
-		<input class="slider" id="slider6" type="range" min="0" max="360" value="0">
-		<label for="slider6">hue rotate</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="blur">0px</div>
-		<input class="slider" id="slider7" type="range" min="0" max="20" value="0">
-		<label for="slider7">blur</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="opacity">100%</div>
-		<input class="slider" id="slider8" type="range" min="0" max="100" value="0">
-		<label for="slider8">opacity</label>
-		</div>
-		<div class="singleSlider">
-		<div class="val" id="sepia">0%</div>
-		<input class="slider" id="slider9" type="range" min="0" max="100" value="0">
-		<label for="slider9">sepia</label>
-		</div>
-    
-  <!-- Check Boxes-->
-  <input type="checkbox" id="sharpen" name="sharpen" value="sharpen">
-  <label for="vehicle1"> Sharpen</label><br> 
+        <button id="resetAll">reset</button>
+        <br /><br />
 
-   
+        <script src="function.js"></script>
 
-    
+      <div id="preview" class="tabcontent">
+        <a><canvas id="canvas" width="1024" height="768"></canvas></a>
+      </div>
+    </div>
+
+    <div class="sliders">
+      <div class="singleSlider">
+        <div class="val" id="bright">100%</div>
+        <input
+          class="slider"
+          id="slider1"
+          type="range"
+          min="0"
+          max="500"
+          value="100"
+        />
+        <label for="slider1">brightness</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="contrast">100%</div>
+        <input
+          class="slider"
+          id="slider2"
+          type="range"
+          min="0"
+          max="500"
+          value="100"
+        />
+        <label for="slider2">contrast</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="saturate">100%</div>
+        <input
+          class="slider"
+          id="slider3"
+          type="range"
+          min="0"
+          max="500"
+          value="100"
+        />
+        <label for="slider3">saturate</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="gray">0%</div>
+        <input
+          class="slider"
+          id="slider4"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <label for="slider4">grayscale</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="invert">0%</div>
+        <input
+          class="slider"
+          id="slider5"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <label for="slider5">invert</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="hue">0°</div>
+        <input
+          class="slider"
+          id="slider6"
+          type="range"
+          min="0"
+          max="360"
+          value="0"
+        />
+        <label for="slider6">hue rotate</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="blur">0px</div>
+        <input
+          class="slider"
+          id="slider7"
+          type="range"
+          min="0"
+          max="20"
+          value="0"
+        />
+        <label for="slider7">blur</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="opacity">100%</div>
+        <input
+          class="slider"
+          id="slider8"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <label for="slider8">opacity</label>
+      </div>
+      <div class="singleSlider">
+        <div class="val" id="sepia">0%</div>
+        <input
+          class="slider"
+          id="slider9"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+        />
+        <label for="slider9">sepia</label>
+      </div>
+    </div>
   </body>
 </html>
