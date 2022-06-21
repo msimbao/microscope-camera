@@ -17,7 +17,7 @@
       <div class="image">
         <div class="tab">
           <button class="tablinks" onclick="openTab(event, 'live')">Live Preview</button>
-          <button class="tablinks" onclick="openTab(event, 'colorhistogram'); previewhistogram();">Histogram</button>
+          <button class="tablinks" onclick="openTab(event, 'colorhistogram'); ">Histogram</button>
           <button class="tablinks" onclick="openTab(event, 'preview'); preview();">Final Preview</button>
           <button class="tablinks" onclick="capture();">Capture</button>
           <button class="tablinks" onclick="logoCapture()">Capture w/Logo</button>
@@ -27,8 +27,19 @@
           <video autoplay="true" id="video"></video>
         </div>
         <div id="colorhistogram" class="tabcontent">
+          
+          <p>
+            <label>Image: <select id="imgSelector">
+            <option onclick="previewhistogram()">Camera</option>
+            <option value="https://cdn.glitch.global/e2c99dad-906b-4e47-92c1-d16bef671625/YE220301-F1.jpg?v=1655232134359">LEICA Camera Yeast</option>
+            <option value="https://cdn.glitch.global/e2c99dad-906b-4e47-92c1-d16bef671625/07.jpg?v=1655826935667">Online Image Algae</option>
+            <option value="https://cdn.glitch.global/e2c99dad-906b-4e47-92c1-d16bef671625/FF211104-3%20111221.jpg?v=1655827411053">LEICA Camera Algae</option>
+            </select>
+            </label>
+          </p>
+          
           <p><img class="thumb" id="myImg"
-              src="https://cdn.glitch.global/f142adb7-8e7e-4636-bb6e-137b849e0976/penstand.PNG?v=1655230844835"
+              src="https://cdn.glitch.global/e2c99dad-906b-4e47-92c1-d16bef671625/YE220301-F1.jpg?v=1655232134359"
               alt="Mushroom Kingdom"/>
           </p>
           

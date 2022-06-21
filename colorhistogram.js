@@ -13,6 +13,7 @@ window.addEventListener('load', function () {
       plotStyle = document.getElementById('plotStyle'),
       plotFill = document.getElementById('plotFill'),
       img = document.getElementById('myImg'),
+      imgSelector = document.getElementById('imgSelector'),
       imgCanvas = document.createElement('canvas'),
       imgCtx = imgCanvas.getContext('2d'),
       gradients = {
@@ -284,6 +285,11 @@ window.addEventListener('load', function () {
   plotStyle.addEventListener('change', updateHist, false);
   plotFill.addEventListener('change', updateHist, false);
   accuracy.addEventListener('change', updateHist, false);
+  
+  
+  imgSelector.addEventListener('change', function () {
+    img.src = this.value;
+  }, false);
 
   initHistogram();
   imgLoaded();
