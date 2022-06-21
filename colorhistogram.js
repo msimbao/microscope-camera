@@ -1,3 +1,9 @@
+//====================================================//
+// @Title: colorhistogram.js
+// @Description: Canvas histogram code
+// @Author: Mihai Şucan
+//====================================================//
+
 window.addEventListener('load', function () {
   var histCanvas = document.getElementById('histogram'),
       histCtx = histCanvas.getContext('2d'),

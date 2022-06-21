@@ -1,9 +1,10 @@
 //====================================================//
+// @Title: script.js
+// @Description: main Javascript for Microscope Image sliders
+// @Author: Mphatso Simbao
+//====================================================//
 
-
-
-//CSS Slider Code By Webdevtrick ( https://webdevtrick.com )
-
+//Original CSS Slider Code base By Webdevtrick ( https://webdevtrick.com )
 
 //====================================================================================//
 //============================Init Sliders============================================//

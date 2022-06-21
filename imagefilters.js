@@ -1,3 +1,9 @@
+//====================================================//
+// @Title: imagefilters.js
+// @Description: Canvas image filter algorithms library
+// @Author: Mphatso Simbao
+//====================================================//
+
 var ImageFilters = {};
 ImageFilters.utils = {
     initSampleCanvas: function () {

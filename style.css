@@ -1,4 +1,15 @@
-/** Part of Code By Webdevtrick ( https://webdevtrick.com ) **/
+/*====================================================//
+// @Title: style.css
+// @Description: main stylsheet for Microscope Image sliders
+// @Author: Mphatso Simbao
+//====================================================*/
+
+/* Original CSS Slider Code base By Webdevtrick ( https://webdevtrick.com ) */
+
+/*====================================================================================//
+//============================Main Body and Container=================================//
+//====================================================================================*/
+
 body {
 	background: #fff;
   overflow:scroll;
@@ -11,6 +22,39 @@ body {
 	height: 100%;
 	width: 100%;
 }
+
+
+/*====================================================================================//
+//================================Video and Canvas====================================//
+//====================================================================================*/
+
+.image {
+	position: absolute;
+	height: 100%;
+	width: 85%;
+  right:20px;
+  top:10px;
+	overflow: hidden;
+}
+
+#video {
+	top: 0%;
+	left: 0%;
+	width: 1024px;
+	height: 768px;
+}
+
+#canvas{
+  top: 0%;
+	left: 0%;
+	width: 1024px;
+	height: 768px;
+}
+
+
+/*====================================================================================//
+//=====================================Sliders Text===================================//
+//====================================================================================*/
 
 .sliders {
 	position: absolute;
@@ -45,6 +89,11 @@ label {
 	text-align: right;
 	visibility: hidden;
 }
+
+/*====================================================================================//
+//===================================Sliders Tracks===================================//
+//====================================================================================*/
+
 input[type="range"] {
 	-webkit-appearance: none;
 	background: transparent;
@@ -117,8 +166,9 @@ select:focus {
 }
 
 
-
-/*Color Histogram*/
+/*====================================================================================//
+//==================================Color Histogram===================================//
+//====================================================================================*/
 
 #histogram, #myImg {
   border: 1px solid #000;
@@ -140,23 +190,10 @@ select:focus {
 
 
 
-#resetAll{
-	position: absolute;
-	top: 60vh;
-	left: -50%;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: crimson;
-	text-transform: uppercase;
-	transform: translate(-50%, 0);
-	font-family: monospace;
-	font-size: 1.5rem;
-	cursor: pointer;
-	color: #fff;
-}
 
-/*Tabs*/
+/*====================================================================================//
+//========================================Tabs========================================//
+//====================================================================================*/
 
 /* Style the tab */
 .tab {
@@ -197,25 +234,4 @@ select:focus {
   border-top: none;
 }
 
-.image {
-	position: absolute;
-	height: 100%;
-	width: 85%;
-  right:20px;
-  top:10px;
-	overflow: hidden;
-}
 
-#video {
-	top: 0%;
-	left: 0%;
-	width: 1024px;
-	height: 768px;
-}
-
-#canvas{
-  top: 0%;
-	left: 0%;
-	width: 1024px;
-	height: 768px;
-}
