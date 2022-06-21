@@ -12,13 +12,13 @@
 
 body {
 	background: #fff;
-  overflow:scroll;
+  overflow:hidden;
 	color: #313131; 
 }
 
 .container{
 	position: absolute;
-  overflow:scroll;
+  overflow:hidden;
 	height: 100%;
 	width: 100%;
 }
@@ -64,21 +64,24 @@ body {
   height:100%;
   padding:5px;
   padding-top:70px;
-  padding-left:50px;
+  padding-left:20px;
 }
 .singleSlider {
-	width: 10px;
-	padding: 0;
+  margin-top:5px;
+	width: 170px;
+	padding: 2px;
+  border:1px solid grey;
 }
 .slider {
 	position: relative;
-	width: 100px;
+	width: 80px;
 	transform-origin: 0 0;
 }
 label {
 	position: relative;
 	font-family: monospace;
 	text-transform: uppercase;
+  font-size:12px;
 }
 .val {
 	position: relative;
@@ -86,10 +89,9 @@ label {
 	font-family: monospace;
 	height: 16px;
 	width: 100%;
-	text-align: right;
-  font-weight:bold;
-  margin-left:0;
-  margin-right:0;
+	text-align: left;
+  color:#aaa;
+  font-size:12px;
 /* 	visibility: hidden; */
 }
 
@@ -104,7 +106,7 @@ label {
   padding: 14px 16px;
   transition: 0.3s;
   font-size: 17px;
-  margin:2px;
+  margin:10px 10px 10px 0px;
 }
 
 /* Change background color of buttons on hover */
