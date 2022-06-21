@@ -1,8 +1,9 @@
-//====================================================//
+//================================================================================//
 // @Title: imagefilters.js
 // @Description: Canvas image filter algorithms library
 // @Author: Mphatso Simbao
-//====================================================//
+// @Original Code site: https://mihai.sucan.ro/coding/svg-or-canvas/histogram.html
+//================================================================================//
 
 var ImageFilters = {};
 ImageFilters.utils = {

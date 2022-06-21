@@ -1,19 +1,17 @@
-//====================================================//
+//================================================================================//
 // @Title: colorhistogram.js
 // @Description: Canvas histogram code
 // @Author: Mihai Şucan
-//====================================================//
+// @Original Code site: https://mihai.sucan.ro/coding/svg-or-canvas/histogram.html
+//===============================================================================//
 
 window.addEventListener('load', function () {
   var histCanvas = document.getElementById('histogram'),
       histCtx = histCanvas.getContext('2d'),
       histType = document.getElementById('histType'),
       accuracy = document.getElementById('accuracy'),
-      runtime = document.getElementById('runtime'),
       plotStyle = document.getElementById('plotStyle'),
       plotFill = document.getElementById('plotFill'),
-      // plotColors = document.getElementById('plotColors'),
-      // imgSelector = document.getElementById('imgSelector'),
       img = document.getElementById('myImg'),
       imgCanvas = document.createElement('canvas'),
       imgCtx = imgCanvas.getContext('2d'),
@@ -55,7 +53,6 @@ window.addEventListener('load', function () {
     // Plot defaults
     accuracy.value = 1;
     plotStyle.value = 'continuous';
-    plotColors.value = 'flat';
     plotFill.checked = true;
     histType.value = 'rgb';
 
@@ -223,7 +220,6 @@ window.addEventListener('load', function () {
       ctxStyle = 'strokeStyle';
     }
 
-    // if (plotColors.value === 'flat') {
       if (type === 'hue') {
         histCtx[ctxStyle] = gradients.hue;
       } else if (type in colors && type !== 'val') {
@@ -231,16 +227,6 @@ window.addEventListener('load', function () {
       } else {
         histCtx[ctxStyle] = '#000';
       }
-
-    // } else if (plotColors.value === 'gradient') {
-    //   if (type in gradients) {
-    //     histCtx[ctxStyle] = gradients[type];
-    //   } else {
-    //     histCtx[ctxStyle] = '#000';
-    //   }
-    // } else if (plotColors.value === 'none') {
-    //   histCtx[ctxStyle] = '#000';
-    // }
 
     if (plotStyle.value === 'continuous') {
       histCtx.beginPath();
@@ -277,14 +263,7 @@ window.addEventListener('load', function () {
   };
 
   var updateHist = function () {
-    var timeStart = (new Date()).getTime();
-
-    runtime.innerHTML = 'Calculating histogram...';
-
     calcHist(histType.value);
-
-    var timeEnd = (new Date()).getTime();
-    runtime.innerHTML = 'Plot runtime: ' + (timeEnd - timeStart) + ' ms.';
   };
 
   var thumbClick = function (ev) {
@@ -304,12 +283,7 @@ window.addEventListener('load', function () {
   histType.addEventListener('change', updateHist, false);
   plotStyle.addEventListener('change', updateHist, false);
   plotFill.addEventListener('change', updateHist, false);
-  plotColors.addEventListener('change', updateHist, false);
   accuracy.addEventListener('change', updateHist, false);
-
-  // imgSelector.addEventListener('change', function () {
-  //   img.src = this.value;
-  // }, false);
 
   initHistogram();
   imgLoaded();
