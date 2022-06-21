@@ -68,9 +68,9 @@ body {
 }
 .singleSlider {
   margin-top:5px;
-	width: 170px;
+	width: 10px;
 	padding: 2px;
-  border:1px solid grey;
+/*   border:1px solid grey; */
 }
 .slider {
 	position: relative;
