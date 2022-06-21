@@ -1,4 +1,14 @@
-//Upper Slider Code By Webdevtrick ( https://webdevtrick.com )
+//====================================================//
+
+
+
+//CSS Slider Code By Webdevtrick ( https://webdevtrick.com )
+
+
+//====================================================================================//
+//============================Init Sliders============================================//
+//====================================================================================//
+
 let brightness = 100;
 let contrast = 100;
 let saturate = 100;
@@ -32,7 +42,10 @@ const value8 = document.getElementById("opacity");
 const slider9 = document.getElementById("slider9");
 const value9 = document.getElementById("sepia");
 
-//Update filters
+//====================================================================================//
+//============================Update Filters==========================================//
+//====================================================================================//
+
 function updateFilters() {
   imgture.style.filter =
     "brightness(" +
@@ -55,7 +68,11 @@ function updateFilters() {
     sepia +
     "%)";
 }
-//Reset All
+
+//====================================================================================//
+//=================================Reset All==========================================//
+//====================================================================================//
+
 resetAll.addEventListener("click", function () {
   // console.log("resset");
   brightness = 100;
@@ -87,6 +104,10 @@ resetAll.addEventListener("click", function () {
   value9.innerHTML = slider9.value + "%";
   updateFilters();
 });
+
+//====================================================================================//
+//====================Slider Event Listeners==========================================//
+//====================================================================================//
 
 //Brightness slider
 slider1.addEventListener("input", function () {
@@ -226,7 +247,9 @@ slider9.addEventListener("blur", function () {
   value9.style.visibility = "hidden";
 });
 
-//Adding Video Camera
+//====================================================================================//
+//=================================Camera=============================================//
+//====================================================================================//
 
 var video = document.querySelector("#video");
 
@@ -241,9 +264,11 @@ if (navigator.mediaDevices.getUserMedia) {
     });
 }
 
-//Preview
+//====================================================================================//
+//=================================Update Canvas======================================//
+//====================================================================================//
 
-function preview() {
+function updateCanvas(){
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
@@ -275,6 +300,16 @@ function preview() {
   var filtered = ImageFilters.Sharpen (imageData, factor)
   var filtered = ImageFilters.Gamma (filtered, 1)
   ctx.putImageData(filtered, 0, 0);
+}
+
+//====================================================================================//
+//=================================Preview============================================//
+//====================================================================================//
+
+
+function preview() {
+  
+  updateCanvas();
   
   var img = document.getElementById('myImg');
   img.src = canvas.getContext("2d").canvas.toDataURL('image/png');
@@ -282,18 +317,9 @@ function preview() {
 }
 
 function capture() {
-  var canvas = document.getElementById("canvas");
-  var video = document.getElementById("video");
-  video.preload = "metadata";
-  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  // var ctx = canvas.getContext('2d');
-  // var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  // var filtered = ImageFilters.GrayScale(imageData);
-  // ctx.putImageData(filtered, 0, 0);
   
-
-
+  updateCanvas();
+  
   var link = document.createElement("a");
   link.href = document.getElementById("canvas").toDataURL();
   link.download = "Microscope Image.png";
@@ -302,7 +328,10 @@ function capture() {
   document.body.removeChild(link);
 }
 
-//Tabs
+//====================================================================================//
+//=================================Tabs===============================================//
+//====================================================================================//
+
 
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;

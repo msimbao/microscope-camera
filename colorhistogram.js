@@ -298,7 +298,7 @@ window.addEventListener('load', function () {
   histType.addEventListener('change', updateHist, false);
   plotStyle.addEventListener('change', updateHist, false);
   plotFill.addEventListener('change', updateHist, false);
-  // plotColors.addEventListener('change', updateHist, false);
+  plotColors.addEventListener('change', updateHist, false);
   accuracy.addEventListener('change', updateHist, false);
 
   // imgSelector.addEventListener('change', function () {
