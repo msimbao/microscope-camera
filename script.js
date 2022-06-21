@@ -310,18 +310,39 @@ function updateCanvas(){
 
 
 function preview() {
-  
+    var canvas = document.getElementById('canvas');
+    var logo = new Image();
+    logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
+    logo.width = 180;
+    logo.height = 50;
+    canvas.getContext('2d').drawImage(logo, canvas.width/2 - logo.width/2, canvas.height/2 + logo.height/3, 180 ,50);
+
   updateCanvas();
-  
   var img = document.getElementById('myImg');
   img.src = canvas.getContext("2d").canvas.toDataURL('image/png');
-  
 }
 
 function capture() {
   
   updateCanvas();
+  var link = document.createElement("a");
+  link.href = document.getElementById("canvas").toDataURL();
+  link.download = "Microscope Image.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+function logoCapture() {
+    updateCanvas();
   
+    var canvas = document.getElementById('canvas');
+    var logo = new Image();
+    logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
+    logo.width = 180;
+    logo.height = 50;
+    canvas.getContext('2d').drawImage(logo, canvas.width/2 - logo.width/2, canvas.height/2 + logo.height/3, 180 ,50);
+
   var link = document.createElement("a");
   link.href = document.getElementById("canvas").toDataURL();
   link.download = "Microscope Image.png";
