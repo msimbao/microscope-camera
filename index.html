@@ -13,8 +13,18 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
+    
+    
+<!--====================================================================================//
+//==============================Main Container==========================================//
+//====================================================================================-->
     <div class="container">
+      
+      <!--====================================================================================//
+      //==============================Media Holder============================================//
+      //====================================================================================-->
       <div class="image">
+        <!-- Tab Buttons -->
         <div class="tab">
           <button class="tablinks" onclick="openTab(event, 'live')">Live Preview</button>
           <button class="tablinks" onclick="openTab(event, 'colorhistogram'); ">Histogram</button>
@@ -23,9 +33,11 @@
           <button class="tablinks" onclick="logoCapture()">Capture w/Logo</button>
         </div>
 
+        <!-- Live Feed -->
         <div id="live" class="tabcontent">
           <video autoplay="true" id="video"></video>
         </div>
+        <!-- Color Histogram -->
         <div id="colorhistogram" class="tabcontent">
           
           <p>
@@ -92,12 +104,30 @@
           </p>
 
         </div>
+        <!-- Final Preview -->
         <div id="preview" class="tabcontent">
           <a><canvas id="canvas" width="1024" height="768"></canvas></a>
         </div>
       </div>
 
+      <!--====================================================================================//
+      //==============================Sliders Holder==========================================//
+      //====================================================================================-->
       <div class="sliders">
+          <!-- Profile Selector -->
+          <p>
+            <label>Profile: <select id="profileSelector">
+              <option value="">Algae 100x</option>
+              <option value="">Algae 400x</option>
+              <option value="">Algae 1000x</option>
+              <option value="">Yeast 100x</option>
+              <option value="">Algae 400x</option>
+              <option value="">Algae 1000x</option>
+            </select>
+            </label>
+          </p>
+        
+        <!-- Settings Sliders -->
         <div class="singleSlider">
           <div class="val" id="bright">100%</div>
           <input
@@ -207,6 +237,7 @@
           <label for="slider9">sepia</label>
         </div>
 
+        <!-- Reset Button -->
         <button id="resetAll">RESET</button>
       </div>
     </div>

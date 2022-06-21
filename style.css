@@ -87,7 +87,10 @@ label {
 	height: 16px;
 	width: 100%;
 	text-align: right;
-	visibility: hidden;
+  font-weight:bold;
+  margin-left:0;
+  margin-right:0;
+/* 	visibility: hidden; */
 }
 
 

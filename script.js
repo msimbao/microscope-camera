@@ -126,7 +126,7 @@ slider1.addEventListener("focus", function () {
 
 slider1.addEventListener("blur", function () {
   // console.log("focus lost");
-  value1.style.visibility = "hidden";
+  // value1.style.visibility = "hidden";
 });
 
 //Contrast slider
@@ -141,7 +141,7 @@ slider2.addEventListener("focus", function () {
 });
 
 slider2.addEventListener("blur", function () {
-  value2.style.visibility = "hidden";
+  // value2.style.visibility = "hidden";
 });
 
 //Saturation slider
@@ -156,7 +156,7 @@ slider3.addEventListener("focus", function () {
 });
 
 slider3.addEventListener("blur", function () {
-  value3.style.visibility = "hidden";
+  // value3.style.visibility = "hidden";
 });
 
 //Grayscale slider
@@ -171,7 +171,7 @@ slider4.addEventListener("focus", function () {
 });
 
 slider4.addEventListener("blur", function () {
-  value4.style.visibility = "hidden";
+  // value4.style.visibility = "hidden";
 });
 
 //Invert slider
@@ -186,7 +186,7 @@ slider5.addEventListener("focus", function () {
 });
 
 slider5.addEventListener("blur", function () {
-  value5.style.visibility = "hidden";
+  // value5.style.visibility = "hidden";
 });
 
 //Hue-rotate slider
@@ -201,7 +201,7 @@ slider6.addEventListener("focus", function () {
 });
 
 slider6.addEventListener("blur", function () {
-  value6.style.visibility = "hidden";
+  // value6.style.visibility = "hidden";
 });
 
 //Blur slider
@@ -216,7 +216,7 @@ slider7.addEventListener("focus", function () {
 });
 
 slider7.addEventListener("blur", function () {
-  value7.style.visibility = "hidden";
+  // value7.style.visibility = "hidden";
 });
 
 //Opacity slider
@@ -231,7 +231,7 @@ slider8.addEventListener("focus", function () {
 });
 
 slider8.addEventListener("blur", function () {
-  value8.style.visibility = "hidden";
+  // value8.style.visibility = "hidden";
 });
 
 //Sepia slider
@@ -246,7 +246,7 @@ slider9.addEventListener("focus", function () {
 });
 
 slider9.addEventListener("blur", function () {
-  value9.style.visibility = "hidden";
+  // value9.style.visibility = "hidden";
 });
 
 //====================================================================================//
