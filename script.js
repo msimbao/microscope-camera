@@ -11,15 +11,15 @@
 //============================Init Sliders============================================//
 //====================================================================================//
 
-let brightness = 100;
-let contrast = 100;
-let saturate = 100;
+let brightness = 80;
+let contrast = 105;
+let saturate = 73;
 let grayscale = 0;
 let invert = 0;
-let huerotate = 0;
+let huerotate = 25;
 let blur = 0;
 let opacity = 100;
-let sepia = 0;
+let sepia = 60;
 let dropshadow = 0;
 
 const imgture = document.getElementById("video");
