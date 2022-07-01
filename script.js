@@ -11,15 +11,15 @@
 //============================Init Sliders============================================//
 //====================================================================================//
 
-let brightness = 80;
-let contrast = 105;
-let saturate = 73;
+let brightness = 100;
+let contrast = 100;
+let saturate = 100;
 let grayscale = 0;
 let invert = 0;
-let huerotate = 25;
+let huerotate = 0;
 let blur = 0;
 let opacity = 100;
-let sepia = 60;
+let sepia = 0;
 let dropshadow = 0;
 
 const imgture = document.getElementById("video");
@@ -345,24 +345,24 @@ function capture() {
   document.body.removeChild(link);
 }
 
-// function logoCapture() {
-//     updateCanvas();
+function logoCapture() {
+    updateCanvas();
   
-//     var canvas = document.getElementById('canvas');
-//     var logo = new Image();
-//     logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
-//     logo.crossOrigin = "Anonymous";
-//     logo.width = 617/2;
-//     logo.height = 112/2;
-//     canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2);
+    var canvas = document.getElementById('canvas');
+    var logo = new Image();
+    logo.src = 'https://cdn.glitch.global/f1d0d290-db4d-490d-b08f-5bd158b9ebc9/Picture2.png?v=1655134117857';
+    logo.crossOrigin = "Anonymous";
+    logo.width = 617/2;
+    logo.height = 112/2;
+    canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2);
 
-//   var link = document.createElement("a");
-//   link.href = document.getElementById("canvas").toDataURL();
-//   link.download = "Microscope Image.png";
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-// }
+  var link = document.createElement("a");
+  link.href = document.getElementById("canvas").toDataURL();
+  link.download = "Microscope Image.png";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 //====================================================================================//
 //=================================Tabs===============================================//
