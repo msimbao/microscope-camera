@@ -391,3 +391,21 @@ function openTab(evt, tabName) {
 event = document.onload;
 openTab(event, "live");
 preview()
+
+
+
+//Imagine I want to fadeOut an element with id = "target"
+function fadeOutEffect()
+{
+ var fadeTarget = document.getElementById("splashScreen");
+ var fadeEffect = setInterval(function() {
+  if (fadeTarget.style.opacity < 0.1)
+  {
+   clearInterval(fadeEffect);
+  }
+  else
+  {
+   fadeTarget.style.opacity -= 0.1;
+  }
+ }, 200);
+}
