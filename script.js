@@ -391,9 +391,4 @@ function openTab(evt, tabName) {
 
 
 
-//Imagine I want to fadeOut an element with id = "target"
-function fadeOutEffect()
-{
-document.getElementById("splashScreen").style.display = 'none';
-}
 

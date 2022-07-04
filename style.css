@@ -15,6 +15,7 @@ body {
   overflow:hidden;
 	color: #313131; 
   font-family:Arial;
+  display:none;
 }
 
 .container{
