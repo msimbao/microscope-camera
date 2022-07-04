@@ -276,7 +276,6 @@ function updateCanvas(){
   var canvas = document.getElementById("canvas");
   var video = document.getElementById("video");
   video.preload = "metadata";
-  canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
   canvas.getContext("2d").filter =
     "brightness(" +
     brightness +
@@ -304,6 +303,9 @@ function updateCanvas(){
   var filtered = ImageFilters.Sharpen (imageData, factor)
   var filtered = ImageFilters.Gamma (filtered, 1)
   ctx.putImageData(filtered, 0, 0);
+  
+    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+
 }
 
 //====================================================================================//
@@ -356,7 +358,8 @@ function logoCapture() {
     logo.crossOrigin = "Anonymous";
     logo.width = 617/2;
     logo.height = 112/2;
-    canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2);
+    canvas.getContext('2d').drawImage(logo, canvas.width - logo.width - 10, canvas.height - logo.height*1.2, 617/2 ,112/2)
+  
 
   var link = document.createElement("a");
   link.href = document.getElementById("canvas").toDataURL();
