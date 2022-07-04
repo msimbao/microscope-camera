@@ -388,9 +388,6 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-event = document.onload;
-openTab(event, "live");
-preview()
 
 
 

@@ -294,4 +294,8 @@ select:focus {
   border-top: none;
 }
 
+#live{
+  display:block;
+}
+
 
